@@ -10,8 +10,8 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, teal, orange);
-      color: white;
+      background: linear-gradient(135deg, #e0f7fa, #ffe0b2); /* soft teal and orange */
+      color: black;
     }
     header {
       display: flex;
@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('team.jpg'); /* Background team photo */
+      background-image: url('team.jpg'); /* team image as background */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -33,41 +33,52 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
-    header h1, header h2, header h3 {
+    header h1, header h2, header p {
       position: relative;
       z-index: 2;
     }
     header h1 {
       font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin: 0;
     }
     .slogan {
+      background-color: teal;
+      padding: 10px 20px;
+      border-radius: 20px;
       display: inline-block;
-      background: teal;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
+      margin-top: 20px;
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      color: white;
+      font-family: 'Roboto', sans-serif;
     }
-    .sub-slogan {
+    .subtitle {
       color: black;
+      margin-top: 10px;
       font-size: 1rem;
+      font-style: italic;
     }
     nav {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 0.5rem 1rem;
-      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      background: white;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     nav a {
-      color: white;
+      margin-left: 20px;
       text-decoration: none;
-      margin-left: 1.5rem;
+      color: teal;
+      font-weight: bold;
       font-size: 0.9rem;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a.book-btn {
+      background: teal;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
     }
     section, footer {
       padding: 4rem 1rem;
@@ -89,55 +100,46 @@
     ul li {
       margin-bottom: 1rem;
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 2rem;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .form-container {
-      background: rgba(255, 255, 255, 0.2);
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
       padding: 2rem;
       border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto 4rem auto;
+      color: black;
     }
-    form input, form textarea {
+    input, textarea {
       width: 100%;
-      padding: 0.8rem;
       margin-bottom: 1rem;
-      border: none;
+      padding: 10px;
       border-radius: 5px;
+      border: 1px solid #ccc;
       font-size: 1rem;
     }
-    form button {
-      padding: 0.8rem 2rem;
-      background: teal;
+    button {
+      background-color: teal;
       color: white;
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 2rem;
-      background: #f0f4f8;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: #f0f4f8;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
     footer {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: #004d40;
       color: white;
       font-size: 0.95rem;
     }
@@ -147,6 +149,7 @@
       gap: 1.5rem;
       max-width: 800px;
       margin: 0 auto;
+      padding: 2rem;
     }
     .footer-links a, .social-icons a {
       color: white;
@@ -156,23 +159,29 @@
     .footer-links a:hover, .social-icons a:hover {
       text-decoration: underline;
     }
-    .map-container {
-      text-align: right;
-      padding: 1rem;
-    }
-    iframe {
-      width: 100%;
-      max-width: 400px;
-      height: 300px;
-      border: none;
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: teal;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
     @media (max-width: 600px) {
       nav {
-        text-align: center;
+        justify-content: center;
       }
-      iframe {
-        max-width: 100%;
-        height: 250px;
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -180,93 +189,96 @@
 
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <h1>
-      <span class="teal">JEEVAN RAKSHYA</span> <span class="orange">HOMECARE</span>
-    </h1>
-    <div class="slogan">"हर घरमा अस्पताल"</div>
-    <div class="sub-slogan">(अब पूर्वाञ्चलमै पहिलो पटक आधिकारिक होमकेयर)</div>
-  </header>
+<!-- Nav Bar -->
+<nav>
+  <a href="#about">About Us</a>
+  <a href="#services">Our Services</a>
+  <a href="#contact">Contact Us</a>
+  <a href="#book" class="book-btn">Book Now</a>
+</nav>
 
-  <!-- Nav Bar -->
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Our Services</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
+<!-- Header Section -->
+<header>
+  <h1><span style="color: #00ffff;">JEEVAN RAKSHYA</span> <span style="color: #ffcc00;">HOMECARE</span></h1>
+  <div class="slogan">"हर घरमा अस्पताल"</div>
+  <div class="subtitle">(अब पूर्वाञ्चलमै पहिलो पटक आधिकारिक होमकेयर)</div>
+</header>
 
-  <!-- About Us Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We bring quality healthcare to your doorstep with our team of professional doctors, nurses, and caregivers.</p>
-  </section>
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>Jeevan Rakshya Homecare brings hospital-level care at the comfort of your home with our professional team.</p>
+</section>
 
-  <!-- Our Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>1. Doctor at Home</li>
-      <li>2. 24/7 Nursing at Home</li>
-      <li>3. Dressing at Home</li>
-      <li>4. Physiotherapy at Home</li>
-      <li>5. Oxygen Delivery at Home</li>
-    </ul>
-  </section>
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>1. Doctor at Home</li>
+    <li>2. 24/7 Nursing at Home</li>
+    <li>3. Dressing at Home</li>
+    <li>4. Physiotherapy at Home</li>
+    <li>5. Oxygen Delivery at Home</li>
+  </ul>
+</section>
 
-  <!-- Gallery Section -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="a1.jpg" alt="Gallery Image 1">
-      <img src="a2.jpg" alt="Gallery Image 2">
-      <img src="a3.jpg" alt="Gallery Image 3">
-      <img src="a4.jpg" alt="Gallery Image 4">
+<!-- Gallery Section -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="a1.jpg" alt="Gallery Image 1">
+    <img src="a2.jpg" alt="Gallery Image 2">
+    <img src="a3.jpg" alt="Gallery Image 3">
+    <img src="a4.jpg" alt="Gallery Image 4">
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form action="mailto:jeevanrakshyahomecare@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<!-- Footer Section -->
+<footer id="book">
+  <div class="footer-content">
+    <div>&copy; 2025 Jeevan Rakshya Homecare. All rights reserved.</div>
+
+    <div class="footer-links">
+      <a href="#about">About Us</a> |
+      <a href="#services">Our Services</a> |
+      <a href="#contact">Contact</a>
     </div>
-  </section>
 
-  <!-- Contact Us Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="form-container">
-      <form action="https://formsubmit.co/jeevanrakshyahomecare@gmail.com" method="POST">
-        <input type="text" name="Name" placeholder="Your Name" required>
-        <input type="email" name="Email" placeholder="Your Email" required>
-        <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <div>
+      <h3>Call to Book</h3>
+      📞 9709091931<br />
+      📞 9709091932
     </div>
-  </section>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <div>&copy; 2025 Jeevan Rakshya Homecare. All rights reserved.</div>
-
-      <div class="footer-links">
-        <a href="#about">About</a> |
-        <a href="#services">Services</a> |
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div>
-        📞 Contact: 9709091931, 9709091932<br/>
-        📧 Email: <a href="mailto:jeevanrakshyahomecare@gmail.com" style="color: white;">jeevanrakshyahomecare@gmail.com</a>
-      </div>
-
-      <div class="social-icons">
-        Follow us:
-        <a href="https://www.facebook.com/profile.php?id=61567718395351" target="_blank">📘 Facebook</a>
-        <a href="https://wa.me/9779709091931" target="_blank">💬 WhatsApp</a>
-      </div>
-
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.573886171137!2d87.9864002745871!3d26.63010197218004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5bb003aef154f%3A0xd62a20de847c1f6a!2sJeevan%20rakshya%20homecare%20pvt%20ltd!5e0!3m2!1sen!2snp!4v1745650291141!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div>Designed & Developed by Your Name</div>
+    <div>
+      Email: <a href="mailto:jeevanrakshyahomecare@gmail.com" style="color: white;">jeevanrakshyahomecare@gmail.com</a>
     </div>
-  </footer>
+
+    <div class="social-icons">
+      Follow us:
+      <a href="https://www.facebook.com/profile.php?id=61567718395351" target="_blank">📘 Facebook</a>
+      <a href="https://wa.me/9779709091931" target="_blank">💬 WhatsApp</a>
+    </div>
+
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.573886171137!2d87.9864002745871!3d26.63010197218004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e5bb003aef154f%3A0xd62a20de847c1f6a!2sJeevan%20rakshya%20homecare%20pvt%20ltd!5e0!3m2!1sen!2snp!4v1745650291141!5m2!1sen!2snp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Book Now Button -->
+<a href="#book" class="floating-button">Book Now</a>
 
 </body>
 </html>
