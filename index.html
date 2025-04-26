@@ -30,7 +30,7 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* black transparent overlay */
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
     header h1 {
@@ -69,6 +69,16 @@
       font-size: 1.2rem;
       line-height: 2rem;
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 300px;
+      border-radius: 10px;
+    }
     footer {
       background-color: rgba(0, 0, 0, 0.2);
       color: white;
@@ -96,6 +106,9 @@
       h2 {
         font-size: 1.8rem;
       }
+      .gallery img {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -119,6 +132,17 @@
       <li>4. Physiotherapy at Home</li>
       <li>5. Oxygen Delivery at Home</li>
     </ul>
+  </section>
+
+  <!-- Gallery Section -->
+  <section>
+    <h2>Our Team in Action</h2>
+    <div class="gallery">
+      <img src="a1.jpg" alt="Team photo 1">
+      <img src="a2.jpg" alt="Team photo 2">
+      <img src="a3.jpg" alt="Team photo 3">
+      <img src="a4.jpg" alt="Team photo 4">
+    </div>
   </section>
 
   <!-- Contact Us Section -->
