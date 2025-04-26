@@ -13,26 +13,41 @@
       background: linear-gradient(135deg, teal, orange);
       color: white;
     }
-    header, section, footer {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
     header {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      background-image: url('team.jpg'); /* team image as background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      text-align: center;
     }
-    h1 {
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* black transparent overlay */
+      z-index: 1;
+    }
+    header h1 {
       font-size: 3rem;
       font-weight: 700;
+      position: relative;
+      z-index: 2;
     }
     .teal {
       color: #00ffff;
     }
     .orange {
       color: #ffcc00;
+    }
+    section, footer {
+      padding: 4rem 1rem;
+      text-align: center;
     }
     h2 {
       font-size: 2.2rem;
@@ -54,32 +69,6 @@
       font-size: 1.2rem;
       line-height: 2rem;
     }
-    form {
-      max-width: 400px;
-      margin: 2rem auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 0.75rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      background-color: white;
-      color: teal;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #f1f1f1;
-    }
     footer {
       background-color: rgba(0, 0, 0, 0.2);
       color: white;
@@ -92,21 +81,14 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    .footer-links a {
+    .footer-links a, .social-icons a {
       color: white;
       text-decoration: none;
       margin: 0 0.5rem;
     }
-    .footer-links a:hover {
+    .footer-links a:hover, .social-icons a:hover {
       text-decoration: underline;
     }
-    .social-icons a {
-      margin: 0 0.5rem;
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -117,13 +99,13 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Hero Section -->
   <header>
     <h1>
-      <span class="teal">JEEVAN RAKSHYA</span>
-      <span class="orange">HOMECARE</span>
+      <span class="teal">JEEVAN RAKSHYA</span> <span class="orange">HOMECARE</span>
     </h1>
   </header>
 
@@ -146,17 +128,9 @@
       📞 9709091931<br />
       📞 9709091932
     </p>
-
-    <!-- Contact Form -->
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer>
     <div class="footer-content">
       <div>&copy; 2025 Jeevan Rakshya Homecare. All rights reserved.</div>
@@ -174,9 +148,8 @@
 
       <div class="social-icons">
         Follow us:
-        <a href="https://www.facebook.com/profile.php?id=61567718395351" title="Facebook" target="_blank">📘 Facebook</a>
-        <a href="#" title="Instagram">📸 Instagram</a>
-        <a href="https://wa.me/9779709091931" title="WhatsApp" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.facebook.com/profile.php?id=61567718395351" target="_blank">📘 Facebook</a>
+        <a href="https://wa.me/9779709091931" target="_blank">💬 WhatsApp</a>
       </div>
 
       <div>Designed & Developed by Your Name</div>
