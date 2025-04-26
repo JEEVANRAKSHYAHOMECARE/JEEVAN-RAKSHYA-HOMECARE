@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('team.jpg'); /* team image as background */
+      background-image: url('team.jpg'); /* Your team image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -70,14 +70,23 @@
       line-height: 2rem;
     }
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
+      max-width: 1000px;
+      margin: 2rem auto;
     }
     .gallery img {
-      width: 300px;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
       border-radius: 10px;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      height: 400px;
     }
     footer {
       background-color: rgba(0, 0, 0, 0.2);
@@ -107,7 +116,7 @@
         font-size: 1.8rem;
       }
       .gallery img {
-        width: 90%;
+        height: 200px;
       }
     }
   </style>
@@ -136,13 +145,22 @@
 
   <!-- Gallery Section -->
   <section>
-    <h2>Our Team in Action</h2>
+    <h2>Gallery</h2>
     <div class="gallery">
-      <img src="a1.jpg" alt="Team photo 1">
-      <img src="a2.jpg" alt="Team photo 2">
-      <img src="a3.jpg" alt="Team photo 3">
-      <img src="a4.jpg" alt="Team photo 4">
+      <img src="a1.jpg" alt="Gallery Image 1">
+      <img src="a2.jpg" alt="Gallery Image 2">
+      <img src="a3.jpg" alt="Gallery Image 3">
+      <img src="a4.jpg" alt="Gallery Image 4">
     </div>
+  </section>
+
+  <!-- Our Location Section -->
+  <section>
+    <h2>Our Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.9981276185253!2d85.31978667529937!3d27.68875427618069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a82d35f7dd3%3A0x8535a47249cf6d9e!2sJeevan%20Rakshya%20Homecare!5e0!3m2!1sen!2snp!4v1714122735394!5m2!1sen!2snp"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </section>
 
   <!-- Contact Us Section -->
