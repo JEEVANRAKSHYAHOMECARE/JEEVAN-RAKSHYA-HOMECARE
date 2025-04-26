@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #ffe0b2); /* soft teal and orange */
+      background: linear-gradient(135deg, #e0f7fa, #ffe0b2);
       color: black;
     }
     header {
@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('team.jpg'); /* team image as background */
+      background-image: url('team.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -33,9 +33,14 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
-    header h1, header h2, header p {
+    header h1, header h2, header p, header img, .slogan, .subtitle {
       position: relative;
       z-index: 2;
+    }
+    header img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
     }
     header h1 {
       font-size: 3rem;
@@ -199,6 +204,7 @@
 
 <!-- Header Section -->
 <header>
+  <img src="log.png" alt="Jeevan Rakshya Homecare Logo">
   <h1><span style="color: #00ffff;">JEEVAN RAKSHYA</span> <span style="color: #ffcc00;">HOMECARE</span></h1>
   <div class="slogan">"हर घरमा अस्पताल"</div>
   <div class="subtitle">(अब पूर्वाञ्चलमै पहिलो पटक आधिकारिक होमकेयर)</div>
