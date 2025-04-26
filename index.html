@@ -1,160 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeevan Rakshya Homecare</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow | Jeevan Rakshya Homecare</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, teal, orange);
-      color: white;
-    }
-    header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url('team.jpg'); /* team image as background */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; }
+
+    .slideshow-container {
+      max-width: 1000px;
       position: relative;
-      text-align: center;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    header::before {
-      content: "";
+
+    .mySlides {
+      display: none;
+      width: 100%;
+    }
+
+    .prev, .next {
+      cursor: pointer;
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* black transparent overlay */
-      z-index: 1;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      position: relative;
-      z-index: 2;
-    }
-    .teal {
-      color: #00ffff;
-    }
-    .orange {
-      color: #ffcc00;
-    }
-    section, footer {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2.2rem;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
       font-weight: bold;
-      margin-bottom: 2rem;
+      font-size: 20px;
+      transition: 0.3s;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      line-height: 2rem;
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
-    ul li {
-      margin-bottom: 1rem;
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 2rem;
+
+    .dot-container {
+      text-align: center;
+      padding: 10px;
+      background: #f1f1f1;
     }
-    footer {
-      background-color: rgba(0, 0, 0, 0.2);
-      color: white;
-      font-size: 0.95rem;
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .footer-links a, .social-icons a {
-      color: white;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    .footer-links a:hover, .social-icons a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
+
+    .active, .dot:hover {
+      background-color: #717171;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>
-      <span class="teal">JEEVAN RAKSHYA</span> <span class="orange">HOMECARE</span>
-    </h1>
-  </header>
+<div class="slideshow-container">
 
-  <!-- Our Services Section -->
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>1. Doctor at Home</li>
-      <li>2. 24/7 Nursing at Home</li>
-      <li>3. Dressing at Home</li>
-      <li>4. Physiotherapy at Home</li>
-      <li>5. Oxygen Delivery at Home</li>
-    </ul>
-  </section>
+  <div class="mySlides fade">
+    <img src="/mnt/data/a1.jpg" style="width:100%">
+  </div>
 
-  <!-- Contact Us Section -->
-  <section>
-    <h2>Contact Us</h2>
-    <p>
-      📞 9709091931<br />
-      📞 9709091932
-    </p>
-  </section>
+  <div class="mySlides fade">
+    <img src="/mnt/data/a2.jpg" style="width:100%">
+  </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <div>&copy; 2025 Jeevan Rakshya Homecare. All rights reserved.</div>
+  <div class="mySlides fade">
+    <img src="/mnt/data/a3.jpg" style="width:100%">
+  </div>
 
-      <div class="footer-links">
-        <a href="#">Home</a> |
-        <a href="#">Our Services</a> |
-        <a href="#">Contact</a>
-      </div>
+  <div class="mySlides fade">
+    <img src="/mnt/data/a4.jpg" style="width:100%">
+  </div>
 
-      <div>
-        Contact: 9709091931, 9709091932<br />
-        Email: <a href="mailto:jeevanrakshyahomecare@gmail.com" style="color: white;">jeevanrakshyahomecare@gmail.com</a>
-      </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-      <div class="social-icons">
-        Follow us:
-        <a href="https://www.facebook.com/profile.php?id=61567718395351" target="_blank">📘 Facebook</a>
-        <a href="https://wa.me/9779709091931" target="_blank">💬 WhatsApp</a>
-      </div>
+</div>
 
-      <div>Designed & Developed by Your Name</div>
-    </div>
-  </footer>
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+// Auto Slide
+setInterval(() => {
+  plusSlides(1);
+}, 3000); // Change image every 3 seconds
+</script>
 
 </body>
 </html>
