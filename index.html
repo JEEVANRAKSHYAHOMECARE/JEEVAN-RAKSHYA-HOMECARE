@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeevan Rakshya Homecare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, teal, orange);
       color: white;
     }
@@ -33,7 +35,7 @@
       color: #ffcc00;
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
       margin-bottom: 2rem;
     }
@@ -51,6 +53,32 @@
     p {
       font-size: 1.2rem;
       line-height: 2rem;
+    }
+    form {
+      max-width: 400px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: white;
+      color: teal;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #f1f1f1;
     }
     footer {
       background-color: rgba(0, 0, 0, 0.2);
@@ -76,6 +104,16 @@
       margin: 0 0.5rem;
       color: white;
       text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -108,6 +146,14 @@
       📞 9709091931<br />
       📞 9709091932
     </p>
+
+    <!-- Contact Form -->
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -123,14 +169,14 @@
 
       <div>
         Contact: 9709091931, 9709091932<br />
-        Email: info@jeevanrakshya.com (replace with your real email)
+        Email: <a href="mailto:jeevanrakshyahomecare@gmail.com" style="color: white;">jeevanrakshyahomecare@gmail.com</a>
       </div>
 
       <div class="social-icons">
         Follow us:
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
+        <a href="https://www.facebook.com/profile.php?id=61567718395351" title="Facebook" target="_blank">📘 Facebook</a>
+        <a href="#" title="Instagram">📸 Instagram</a>
+        <a href="https://wa.me/9779709091931" title="WhatsApp" target="_blank">💬 WhatsApp</a>
       </div>
 
       <div>Designed & Developed by Your Name</div>
