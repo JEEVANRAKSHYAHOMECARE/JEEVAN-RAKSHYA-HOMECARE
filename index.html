@@ -25,6 +25,7 @@
       background-repeat: no-repeat;
       position: relative;
       text-align: center;
+      padding: 1rem;
     }
     header::before {
       content: "";
@@ -33,11 +34,22 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
+    header h1, header h3, header p {
+      position: relative;
+      z-index: 2;
+      margin: 0.5rem 0;
+    }
     header h1 {
       font-size: 3rem;
       font-weight: 700;
-      position: relative;
-      z-index: 2;
+    }
+    header h3 {
+      font-size: 2rem;
+      color: #00ffff; /* teal blue */
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #ffcc00; /* orange */
     }
     .teal {
       color: #00ffff;
@@ -143,6 +155,9 @@
       header h1 {
         font-size: 2rem;
       }
+      header h3 {
+        font-size: 1.5rem;
+      }
       h2 {
         font-size: 1.8rem;
       }
@@ -161,6 +176,8 @@
     <h1>
       <span class="teal">JEEVAN RAKSHYA</span> <span class="orange">HOMECARE</span>
     </h1>
+    <h3>हर घरमा अस्पताल</h3>
+    <p>अब पूर्वाञ्चलमै पहिलो पटक आधिकारिक होमकेयर</p>
   </header>
 
   <!-- Our Services Section -->
@@ -189,7 +206,7 @@
   <!-- Footer Section -->
   <footer>
     <div class="footer-content">
-      
+
       <!-- Left Side -->
       <div class="footer-left">
         <div>&copy; 2025 Jeevan Rakshya Homecare. All rights reserved.</div>
