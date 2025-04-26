@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('team.jpg'); /* team image as background */
+      background-image: url('team.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -30,7 +30,7 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* black transparent overlay */
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
     header h1, header .slogan, header .sub-slogan {
@@ -41,12 +41,6 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-    }
-    .teal {
-      color: #00ffff;
-    }
-    .orange {
-      color: #ffcc00;
     }
     .slogan {
       background-color: #00ffff;
@@ -65,15 +59,26 @@
     }
     nav {
       background-color: #003333;
-      padding: 0.8rem;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
-      margin: 0 1rem;
+      margin: 0 0.8rem;
       text-decoration: none;
       font-size: 0.9rem;
+    }
+    nav a.phone-button {
+      background: #00cccc;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
     }
     nav a:hover {
       text-decoration: underline;
@@ -168,7 +173,7 @@
       width: 100px;
       margin-bottom: 1rem;
     }
-    .phone-button {
+    .phone-button-footer {
       display: inline-block;
       background-color: #00cccc;
       color: white;
@@ -179,7 +184,7 @@
       font-weight: bold;
       font-size: 1rem;
     }
-    .phone-button:hover {
+    .phone-button-footer:hover {
       background-color: #008080;
     }
     .footer-links a, .social-icons a {
@@ -207,7 +212,7 @@
   <a href="#">About Us</a>
   <a href="#services">Our Services</a>
   <a href="#contact">Contact Us</a>
-  <a href="#book" class="phone-button" style="background: none; border: 2px solid #00cccc; border-radius: 30px;">📞 Book Now</a>
+  <a href="tel:+9779709091931" class="phone-button">📞 Book Now</a>
 </nav>
 
 <!-- Our Services -->
@@ -253,7 +258,7 @@
 </section>
 
 <!-- Floating Book Now Button -->
-<a href="#book" class="floating-button">📞</a>
+<a href="tel:+9779709091931" class="floating-button">📞</a>
 
 <!-- Footer -->
 <footer id="book">
@@ -267,8 +272,8 @@
     <hr style="border: 0.5px solid white; width: 60%; margin: 2rem auto;">
     
     <div>
-      <a href="#" class="phone-button">📞 9709091931</a><br>
-      <a href="#" class="phone-button">📞 9709091932</a>
+      <a href="tel:+9779709091931" class="phone-button-footer">📞 9709091931</a><br>
+      <a href="tel:+9779709091932" class="phone-button-footer">📞 9709091932</a>
     </div>
 
     <div style="margin: 2rem 0;">
