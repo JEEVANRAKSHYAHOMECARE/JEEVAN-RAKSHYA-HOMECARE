@@ -4,45 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeevan Rakshya Homecare</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .teal {
+      color: teal;
+    }
+    .orange {
+      color: orange;
+    }
+    section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .services, .contact {
+      background-color: #ffffff;
+    }
+    h2 {
+      color: teal;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    ul li {
+      margin-bottom: 1rem;
+    }
+    .contact {
+      background-color: #f1f1f1;
+    }
+    .contact p {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 2rem;
+    }
+  </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+<body>
 
   <!-- Hero Section -->
-  <header style="
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-  ">
-    <img src="logo.png" alt="Jeevan Rakshya Logo" style="width: 120px; height: auto; margin-bottom: 1rem;" />
-    <h1 style="font-size: 3rem; font-weight: 700; text-align: center;">
-      <span style="color: teal;">JEEVAN RAKSHYA</span>
-      <span style="color: orange;">HOMECARE</span>
+  <header>
+    <img src="logo.png" alt="Jeevan Rakshya Logo" />
+    <h1>
+      <span class="teal">JEEVAN RAKSHYA</span>
+      <span class="orange">HOMECARE</span>
     </h1>
   </header>
 
   <!-- Our Services Section -->
-  <section style="padding: 4rem 1rem; text-align: center; background-color: #ffffff;">
-    <h2 style="color: teal; font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem;">
-      Our Services
-    </h2>
-    <ul style="list-style-type: none; padding: 0; max-width: 600px; margin: 0 auto; font-size: 1.2rem; color: #333;">
-      <li style="margin-bottom: 1rem;">1. Doctor at Home</li>
-      <li style="margin-bottom: 1rem;">2. 24/7 Nursing at Home</li>
-      <li style="margin-bottom: 1rem;">3. Dressing at Home</li>
-      <li style="margin-bottom: 1rem;">4. Physiotherapy at Home</li>
-      <li style="margin-bottom: 1rem;">5. Oxygen Delivery at Home</li>
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>1. Doctor at Home</li>
+      <li>2. 24/7 Nursing at Home</li>
+      <li>3. Dressing at Home</li>
+      <li>4. Physiotherapy at Home</li>
+      <li>5. Oxygen Delivery at Home</li>
     </ul>
   </section>
 
   <!-- Contact Us Section -->
-  <section style="padding: 4rem 1rem; text-align: center; background-color: #f1f1f1;">
-    <h2 style="color: teal; font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">
-      Contact Us
-    </h2>
-    <p style="font-size: 1.2rem; color: #333;">
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>
       📞 9709091931<br />
       📞 9709091932
     </p>
